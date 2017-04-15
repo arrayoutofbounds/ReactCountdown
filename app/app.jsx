@@ -2,6 +2,8 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var { Route, Router, IndexRoute, hashHistory} = require('react-router');
 var Main = require('Main');
+var Timer = require('Timer');
+var Countdown = require('Countdown');
 
 // load Foundation
 // need to use css loader as require cannot load in css file.
@@ -18,9 +20,14 @@ require('style!css!sass!applicationStyles');
 
 // just home route will render main and index Route
 // if its is /about then it will render main and then about component
+
+// index route is rendered in main, if nothing else is rendered. Since timer is a child,
+// it will be shown under main
 ReactDOM.render(
   <Router history={hashHistory}>
     <Route path="/" component={Main}>
+      <Route path="countdown" component={Countdown} />
+      <IndexRoute component={Timer} />
     </Route>
   </Router>,
   document.getElementById('app')
