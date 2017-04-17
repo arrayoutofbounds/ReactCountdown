@@ -8,7 +8,8 @@ var Countdown = require('Countdown');
 // load Foundation
 // need to use css loader as require cannot load in css file.
 // need to use style loaded to inject css in to html
-require('style!css!foundation-sites/dist/foundation.min.css');
+//require('style!css!foundation-sites/dist/foundation.min.css');
+
 $(document).foundation(); // fire off foundation
 
 // app css load it after doing sass followed by css and style loaders

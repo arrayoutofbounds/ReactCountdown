@@ -1,4 +1,5 @@
 var webpack = require('webpack');
+var path = require('path');
 module.exports = {
   entry: [
     'script!jquery/dist/jquery.min.js',
@@ -42,6 +43,11 @@ module.exports = {
         test: /\.jsx?$/, // tells babel loader which files to parse
         exlude: /(node_modules|bower_components)/ // folders to ignore in parse
       }
+    ]
+  },
+  sassLoader: {
+    includePaths: [
+      path.resolve(__dirname,'./node_modules/foundation-sites/scss')
     ]
   },
   devtool: 'cheap-module-eval-source-map'
