@@ -57,7 +57,7 @@ describe('Countdown', () => {
       },1001);
     });
 
-    it('should stop countdown on stop status', () => {
+    it('should stop countdown on stop status', (done) => {
       var countdown = TestUtils.renderIntoDocument(<Countdown />);
       countdown.handleSetCountdown(3); // call internal component method to start countdown
 
